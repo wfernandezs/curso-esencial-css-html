@@ -33,6 +33,10 @@
     --gray10: #616161;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     color: var(--gray30);
     font-family: 'Roboto', sans-serif;    
@@ -47,6 +51,10 @@ a {
 header { 
     font-size: 14px;
     color: var(--gray10);
+    position: absolute;
+    width: 188px;
+    left: -232px;
+    top: 64px;
 }
 
 header a {
@@ -54,26 +62,28 @@ header a {
     text-decoration: none;
 }
 
+header li {
+    margin-bottom: 16px;
+}
+
 header a:hover {
     color: var(--gray30);
 }
 
 nav details summary {
-    font-weight: bold;
+    font-weight: bold;      
+    line-height: 24px;
 }
 
 hr {
     margin: 64px;
 }
 
-/* h1 ~ p {
-    margin-bottom: 64px;
-} */
-
 h1 {
     font-size: 60px;
     margin-top: 64px; 
     margin-bottom: 16px;
+    font-weight: 400;
 }
 
 h2 {
@@ -87,14 +97,53 @@ h3 {
     margin-top: 16px;
     margin-bottom: 24px;
     font-weight: normal;
+    position: relative;
 }
 
 pre {
     background: #FEC62E;
+    padding: 40px;
+    font-family: 'Roboto';
+    line-height: 24px;
 }
 
 blockquote {
+    font-size: 24px;
     margin: 32px 0;
+    padding-left: 16px;
+    line-height: 24px;
+    /* border: 1px solid red */
+    border-left: 4px solid var(--gray30)
+}
+
+blockquote span {
+    color: var(--gray10);
+}
+
+blockquote span:before {
+    content: '-';
+}
+
+.header {
+    position: sticky;
+    top: 0;
+}
+
+.header-content {
+    position: relative;
+}
+
+.main {
+    background: white;
+}
+
+.wrapper {
+    width: 902px;
+    margin: auto;
+}
+
+.main-content {
+    background-color: white;
 }
 
 .hero {
@@ -132,16 +181,20 @@ blockquote {
 
 .section-content h3 {
     counter-increment: titleList;
+    padding-bottom: 8px;
 }
 
 .section-content h3::before {
-    content: counter(titleList, decimal);
+    content: counter(titleList, decimal) '. ';
 }
 
 .section-content h3::after {
     content: ' ';
-    width: 32px;
+    width: 80px;
     height: 4px;
     background: var(--gray30);
     display: inline-block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
 }
