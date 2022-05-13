@@ -175,6 +175,7 @@ blockquote p {
     scroll-behavior: smooth;
     white-space: nowrap;
     font-size: 0;
+    overflow-x: hidden;
 }
 
 .video {
